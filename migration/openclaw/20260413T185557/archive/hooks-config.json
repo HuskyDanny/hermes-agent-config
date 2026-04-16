@@ -1,0 +1,54 @@
+{
+  "enabled": true,
+  "path": "/hooks",
+  "token": "2d3ef93f6bdaea0df709c1ad7d93324e24b557e1884c1f99",
+  "defaultSessionKey": "hook:github-ingress",
+  "allowRequestSessionKey": true,
+  "allowedSessionKeyPrefixes": [
+    "hook:",
+    "telegram:",
+    "acp:"
+  ],
+  "allowedAgentIds": [
+    "main",
+    "coder",
+    "reviewer"
+  ],
+  "mappings": [
+    {
+      "id": "github",
+      "match": {
+        "path": "github"
+      },
+      "action": "agent",
+      "agentId": "coder",
+      "messageTemplate": "GitHub PR Comment on {{repository.full_name}} PR #{{pull_request.number}} ({{pull_request.title}}):\n\nFile: {{comment.path}}:{{comment.line}}\nComment: {{comment.body}}\nURL: {{comment.html_url}}\n\nFollow Webhook Reaction workflow in AGENTS.md. Spawn an ACP Claude Code session to fix this.",
+      "deliver": true,
+      "channel": "telegram",
+      "to": "-1003891805831:topic:506"
+    }
+  ],
+  "internal": {
+    "enabled": true,
+    "entries": {
+      "command-logger": {
+        "enabled": true
+      },
+      "session-memory": {
+        "enabled": true
+      },
+      "boot-md": {
+        "enabled": true
+      },
+      "self-improvement": {
+        "enabled": true
+      },
+      "workflow-tracker": {
+        "enabled": true
+      },
+      "router-decision-logger": {
+        "enabled": true
+      }
+    }
+  }
+}

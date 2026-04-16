@@ -1,0 +1,784 @@
+{
+  "timestamp": "20260413T184100",
+  "mode": "execute",
+  "source_root": "/Users/allenpan/.openclaw",
+  "target_root": "/Users/allenpan/.hermes",
+  "workspace_target": null,
+  "output_dir": "/Users/allenpan/.hermes/migration/openclaw/20260413T184100",
+  "migrate_secrets": true,
+  "preset": "full",
+  "skill_conflict_mode": "skip",
+  "selection": {
+    "selected": [
+      "agent-config",
+      "approvals-config",
+      "archive",
+      "browser-config",
+      "command-allowlist",
+      "cron-jobs",
+      "daily-memory",
+      "deep-channels",
+      "discord-settings",
+      "full-providers",
+      "gateway-config",
+      "hooks-config",
+      "logging-config",
+      "mcp-servers",
+      "memory",
+      "memory-backend",
+      "messaging-settings",
+      "model-config",
+      "plugins-config",
+      "provider-keys",
+      "secret-settings",
+      "session-config",
+      "shared-skills",
+      "signal-settings",
+      "skills",
+      "skills-config",
+      "slack-settings",
+      "soul",
+      "tools-config",
+      "tts-assets",
+      "tts-config",
+      "ui-identity",
+      "user-profile",
+      "whatsapp-settings",
+      "workspace-agents"
+    ],
+    "preset": "full",
+    "skill_conflict_mode": "skip",
+    "available": [
+      {
+        "id": "soul",
+        "label": "SOUL.md",
+        "description": "Import the OpenClaw persona file into Hermes."
+      },
+      {
+        "id": "workspace-agents",
+        "label": "Workspace instructions",
+        "description": "Copy the OpenClaw workspace instructions file into a chosen workspace."
+      },
+      {
+        "id": "memory",
+        "label": "MEMORY.md",
+        "description": "Import long-term memory entries into Hermes memories."
+      },
+      {
+        "id": "user-profile",
+        "label": "USER.md",
+        "description": "Import user profile entries into Hermes memories."
+      },
+      {
+        "id": "messaging-settings",
+        "label": "Messaging settings",
+        "description": "Import Hermes-compatible messaging settings such as allowlists and working directory."
+      },
+      {
+        "id": "secret-settings",
+        "label": "Allowlisted secrets",
+        "description": "Import the small allowlist of Hermes-compatible secrets when explicitly enabled."
+      },
+      {
+        "id": "command-allowlist",
+        "label": "Command allowlist",
+        "description": "Merge OpenClaw exec approval patterns into Hermes command_allowlist."
+      },
+      {
+        "id": "skills",
+        "label": "User skills",
+        "description": "Copy OpenClaw skills into ~/.hermes/skills/openclaw-imports/."
+      },
+      {
+        "id": "tts-assets",
+        "label": "TTS assets",
+        "description": "Copy compatible workspace TTS assets into ~/.hermes/tts/."
+      },
+      {
+        "id": "discord-settings",
+        "label": "Discord settings",
+        "description": "Import Discord bot token and allowlist into Hermes .env."
+      },
+      {
+        "id": "slack-settings",
+        "label": "Slack settings",
+        "description": "Import Slack bot/app tokens and allowlist into Hermes .env."
+      },
+      {
+        "id": "whatsapp-settings",
+        "label": "WhatsApp settings",
+        "description": "Import WhatsApp allowlist into Hermes .env."
+      },
+      {
+        "id": "signal-settings",
+        "label": "Signal settings",
+        "description": "Import Signal account, HTTP URL, and allowlist into Hermes .env."
+      },
+      {
+        "id": "provider-keys",
+        "label": "Provider API keys",
+        "description": "Import model provider API keys into Hermes .env (requires --migrate-secrets)."
+      },
+      {
+        "id": "model-config",
+        "label": "Default model",
+        "description": "Import the default model setting into Hermes config.yaml."
+      },
+      {
+        "id": "tts-config",
+        "label": "TTS configuration",
+        "description": "Import TTS provider and voice settings into Hermes config.yaml."
+      },
+      {
+        "id": "shared-skills",
+        "label": "Shared skills",
+        "description": "Copy shared OpenClaw skills from ~/.openclaw/skills/ into Hermes."
+      },
+      {
+        "id": "daily-memory",
+        "label": "Daily memory files",
+        "description": "Merge daily memory entries from workspace/memory/ into Hermes MEMORY.md."
+      },
+      {
+        "id": "archive",
+        "label": "Archive unmapped docs",
+        "description": "Archive compatible-but-unmapped docs for later manual review."
+      },
+      {
+        "id": "mcp-servers",
+        "label": "MCP servers",
+        "description": "Import MCP server definitions from OpenClaw into Hermes config.yaml."
+      },
+      {
+        "id": "plugins-config",
+        "label": "Plugins configuration",
+        "description": "Archive OpenClaw plugin configuration and installed extensions for manual review."
+      },
+      {
+        "id": "cron-jobs",
+        "label": "Cron / scheduled tasks",
+        "description": "Import cron job definitions. Archive for manual recreation via 'hermes cron'."
+      },
+      {
+        "id": "hooks-config",
+        "label": "Hooks and webhooks",
+        "description": "Archive OpenClaw hook configuration (internal hooks, webhooks, Gmail integration)."
+      },
+      {
+        "id": "agent-config",
+        "label": "Agent defaults and multi-agent setup",
+        "description": "Import agent defaults (compaction, context, thinking) into Hermes config. Archive multi-agent list."
+      },
+      {
+        "id": "gateway-config",
+        "label": "Gateway configuration",
+        "description": "Import gateway port and auth settings. Archive full gateway config for manual setup."
+      },
+      {
+        "id": "session-config",
+        "label": "Session configuration",
+        "description": "Import session reset policies (daily/idle) into Hermes session_reset config."
+      },
+      {
+        "id": "full-providers",
+        "label": "Full model provider definitions",
+        "description": "Import custom model providers (baseUrl, apiType, headers) into Hermes custom_providers."
+      },
+      {
+        "id": "deep-channels",
+        "label": "Deep channel configuration",
+        "description": "Import extended channel settings (Matrix, Mattermost, IRC, group configs). Archive complex settings."
+      },
+      {
+        "id": "browser-config",
+        "label": "Browser configuration",
+        "description": "Import browser automation settings into Hermes config.yaml."
+      },
+      {
+        "id": "tools-config",
+        "label": "Tools configuration",
+        "description": "Import tool settings (exec timeout, sandbox, web search) into Hermes config.yaml."
+      },
+      {
+        "id": "approvals-config",
+        "label": "Approval rules",
+        "description": "Import approval mode and rules into Hermes config.yaml approvals section."
+      },
+      {
+        "id": "memory-backend",
+        "label": "Memory backend configuration",
+        "description": "Archive OpenClaw memory backend settings (QMD, vector search, citations) for manual review."
+      },
+      {
+        "id": "skills-config",
+        "label": "Skills registry configuration",
+        "description": "Archive per-skill enabled/config/env settings from OpenClaw skills.entries."
+      },
+      {
+        "id": "ui-identity",
+        "label": "UI and identity settings",
+        "description": "Archive OpenClaw UI theme, assistant identity, and display preferences."
+      },
+      {
+        "id": "logging-config",
+        "label": "Logging and diagnostics",
+        "description": "Archive OpenClaw logging and diagnostics configuration."
+      }
+    ],
+    "presets": [
+      {
+        "id": "user-data",
+        "selected": [
+          "agent-config",
+          "approvals-config",
+          "archive",
+          "browser-config",
+          "command-allowlist",
+          "cron-jobs",
+          "daily-memory",
+          "deep-channels",
+          "discord-settings",
+          "full-providers",
+          "gateway-config",
+          "hooks-config",
+          "logging-config",
+          "mcp-servers",
+          "memory",
+          "memory-backend",
+          "messaging-settings",
+          "model-config",
+          "plugins-config",
+          "session-config",
+          "shared-skills",
+          "signal-settings",
+          "skills",
+          "skills-config",
+          "slack-settings",
+          "soul",
+          "tools-config",
+          "tts-assets",
+          "tts-config",
+          "ui-identity",
+          "user-profile",
+          "whatsapp-settings",
+          "workspace-agents"
+        ]
+      },
+      {
+        "id": "full",
+        "selected": [
+          "agent-config",
+          "approvals-config",
+          "archive",
+          "browser-config",
+          "command-allowlist",
+          "cron-jobs",
+          "daily-memory",
+          "deep-channels",
+          "discord-settings",
+          "full-providers",
+          "gateway-config",
+          "hooks-config",
+          "logging-config",
+          "mcp-servers",
+          "memory",
+          "memory-backend",
+          "messaging-settings",
+          "model-config",
+          "plugins-config",
+          "provider-keys",
+          "secret-settings",
+          "session-config",
+          "shared-skills",
+          "signal-settings",
+          "skills",
+          "skills-config",
+          "slack-settings",
+          "soul",
+          "tools-config",
+          "tts-assets",
+          "tts-config",
+          "ui-identity",
+          "user-profile",
+          "whatsapp-settings",
+          "workspace-agents"
+        ]
+      }
+    ]
+  },
+  "summary": {
+    "migrated": 11,
+    "archived": 17,
+    "skipped": 22,
+    "conflict": 0,
+    "error": 0
+  },
+  "items": [
+    {
+      "kind": "soul",
+      "source": "/Users/allenpan/.openclaw/workspace/SOUL.md",
+      "destination": "/Users/allenpan/.hermes/SOUL.md",
+      "status": "migrated",
+      "reason": "",
+      "details": {
+        "backup": "/Users/allenpan/.hermes/migration/openclaw/20260413T184100/backups/Users/allenpan/.hermes/SOUL.md"
+      }
+    },
+    {
+      "kind": "workspace-agents",
+      "source": "/Users/allenpan/.openclaw/workspace/AGENTS.md",
+      "destination": null,
+      "status": "skipped",
+      "reason": "No workspace target was provided",
+      "details": {}
+    },
+    {
+      "kind": "memory",
+      "source": "/Users/allenpan/.openclaw/workspace/MEMORY.md",
+      "destination": "/Users/allenpan/.hermes/memories/MEMORY.md",
+      "status": "migrated",
+      "reason": "",
+      "details": {
+        "backup": "",
+        "overflow_preview": [],
+        "existing_entries": 0,
+        "added_entries": 8,
+        "duplicate_entries": 0,
+        "overflowed_entries": 0,
+        "char_limit": 2200,
+        "final_char_count": 814
+      }
+    },
+    {
+      "kind": "user-profile",
+      "source": "/Users/allenpan/.openclaw/workspace/USER.md",
+      "destination": "/Users/allenpan/.hermes/memories/USER.md",
+      "status": "migrated",
+      "reason": "",
+      "details": {
+        "backup": "",
+        "overflow_preview": [],
+        "existing_entries": 0,
+        "added_entries": 16,
+        "duplicate_entries": 0,
+        "overflowed_entries": 0,
+        "char_limit": 1375,
+        "final_char_count": 1228
+      }
+    },
+    {
+      "kind": "messaging-settings",
+      "source": "/Users/allenpan/.openclaw/openclaw.json",
+      "destination": "/Users/allenpan/.hermes/.env",
+      "status": "skipped",
+      "reason": "No Hermes-compatible messaging settings found",
+      "details": {}
+    },
+    {
+      "kind": "secret-settings",
+      "source": "/Users/allenpan/.openclaw/openclaw.json",
+      "destination": "/Users/allenpan/.hermes/.env",
+      "status": "migrated",
+      "reason": "",
+      "details": {
+        "backup": "/Users/allenpan/.hermes/migration/openclaw/20260413T184100/backups/Users/allenpan/.hermes/.env",
+        "added_keys": [
+          "TELEGRAM_BOT_TOKEN"
+        ],
+        "conflicting_keys": []
+      }
+    },
+    {
+      "kind": "discord-settings",
+      "source": "/Users/allenpan/.openclaw/openclaw.json",
+      "destination": "/Users/allenpan/.hermes/.env",
+      "status": "skipped",
+      "reason": "No Discord settings found",
+      "details": {}
+    },
+    {
+      "kind": "slack-settings",
+      "source": "/Users/allenpan/.openclaw/openclaw.json",
+      "destination": "/Users/allenpan/.hermes/.env",
+      "status": "skipped",
+      "reason": "No Slack settings found",
+      "details": {}
+    },
+    {
+      "kind": "whatsapp-settings",
+      "source": "/Users/allenpan/.openclaw/openclaw.json",
+      "destination": "/Users/allenpan/.hermes/.env",
+      "status": "skipped",
+      "reason": "No WhatsApp settings found",
+      "details": {}
+    },
+    {
+      "kind": "signal-settings",
+      "source": "/Users/allenpan/.openclaw/openclaw.json",
+      "destination": "/Users/allenpan/.hermes/.env",
+      "status": "skipped",
+      "reason": "No Signal settings found",
+      "details": {}
+    },
+    {
+      "kind": "provider-keys",
+      "source": "/Users/allenpan/.openclaw/openclaw.json",
+      "destination": "/Users/allenpan/.hermes/.env",
+      "status": "skipped",
+      "reason": "No provider API keys found",
+      "details": {
+        "supported_targets": [
+          "ANTHROPIC_API_KEY",
+          "ELEVENLABS_API_KEY",
+          "OPENAI_API_KEY",
+          "OPENROUTER_API_KEY",
+          "TELEGRAM_BOT_TOKEN",
+          "VOICE_TOOLS_OPENAI_KEY"
+        ]
+      }
+    },
+    {
+      "kind": "model-config",
+      "source": "/Users/allenpan/.openclaw/openclaw.json",
+      "destination": "/Users/allenpan/.hermes/config.yaml",
+      "status": "migrated",
+      "reason": "",
+      "details": {
+        "backup": "/Users/allenpan/.hermes/migration/openclaw/20260413T184100/backups/Users/allenpan/.hermes/config.yaml",
+        "model": "anthropic/claude-opus-4-6"
+      }
+    },
+    {
+      "kind": "tts-config",
+      "source": "/Users/allenpan/.openclaw/openclaw.json",
+      "destination": "/Users/allenpan/.hermes/config.yaml",
+      "status": "skipped",
+      "reason": "No TTS configuration found in OpenClaw config",
+      "details": {}
+    },
+    {
+      "kind": "command-allowlist",
+      "source": "/Users/allenpan/.openclaw/exec-approvals.json",
+      "destination": "/Users/allenpan/.hermes/config.yaml",
+      "status": "migrated",
+      "reason": "",
+      "details": {
+        "backup": "/Users/allenpan/.hermes/migration/openclaw/20260413T184100/backups/Users/allenpan/.hermes/config.yaml",
+        "added_patterns": [
+          "gh",
+          "openclaw",
+          "tmux"
+        ]
+      }
+    },
+    {
+      "kind": "skill",
+      "source": "/Users/allenpan/.openclaw/workspace/skills/china-holidays",
+      "destination": "/Users/allenpan/.hermes/skills/openclaw-imports/china-holidays",
+      "status": "migrated",
+      "reason": "",
+      "details": {
+        "backup": ""
+      }
+    },
+    {
+      "kind": "skill",
+      "source": "/Users/allenpan/.openclaw/workspace/skills/self-improvement",
+      "destination": "/Users/allenpan/.hermes/skills/openclaw-imports/self-improvement",
+      "status": "migrated",
+      "reason": "",
+      "details": {
+        "backup": ""
+      }
+    },
+    {
+      "kind": "shared-skills",
+      "source": null,
+      "destination": "/Users/allenpan/.hermes/skills/openclaw-imports",
+      "status": "skipped",
+      "reason": "No shared OpenClaw skills directories found",
+      "details": {}
+    },
+    {
+      "kind": "daily-memory",
+      "source": "/Users/allenpan/.openclaw/workspace/memory",
+      "destination": "/Users/allenpan/.hermes/memories/MEMORY.md",
+      "status": "migrated",
+      "reason": "",
+      "details": {
+        "backup": "/Users/allenpan/.hermes/migration/openclaw/20260413T184100/backups/Users/allenpan/.hermes/memories/MEMORY.md",
+        "overflow_preview": [
+          "Router Decisions — 2026-03-31: [2026-03-31T10:14:09.022Z] [agent:main:cron:6d1be29b-9108-4e77-bd91-f2b62b14543a] SELF cron:imessage-daily-summary | reason: generated daily iMessage digest for Allen",
+          "Router Decisions — 2026-04-07: [2026-04-07T10:07:32.363Z] [agent:main:cron:6d1be29b-9108-4e77-bd91-f2b62b14543a] SELF cron-imessage-summary | reason: daily iMessage digest generated and returned to cron delivery",
+          "Router Decisions — 2026-04-08: [2026-04-08T10:02:03.762Z] [agent:main:cron:6d1be29b-9108-4e77-bd91-f2b62b14543a] SELF cron-imessage-daily-summary | reason: generated daily iMessage digest for delivery via cron channel",
+          "Router Decisions — 2026-04-12: [2026-04-12T10:14:41.273Z] [agent:main:cron:6d1be29b-9108-4e77-bd91-f2b62b14543a] SELF cron:imessage-daily-summary | reason: daily iMessage digest generated for owner Allen",
+          "Router Decisions — 2026-04-13: [2026-04-13T10:07:00.698Z] [agent:main:cron:6d1be29b-9108-4e77-bd91-f2b62b14543a] SELF cron:daily-imessage-summary | reason: read and summarized today's iMessages for Allen"
+        ],
+        "source_files": 10,
+        "existing_entries": 8,
+        "added_entries": 5,
+        "duplicate_entries": 0,
+        "overflowed_entries": 5,
+        "char_limit": 2200,
+        "final_char_count": 2060,
+        "overflow_file": "/Users/allenpan/.hermes/migration/openclaw/20260413T184100/overflow/daily_memory_overflow.txt"
+      }
+    },
+    {
+      "kind": "tts-assets",
+      "source": null,
+      "destination": "/Users/allenpan/.hermes/tts",
+      "status": "skipped",
+      "reason": "Source directory not found",
+      "details": {}
+    },
+    {
+      "kind": "archive",
+      "source": "/Users/allenpan/.openclaw/workspace/IDENTITY.md",
+      "destination": "/Users/allenpan/.hermes/migration/openclaw/20260413T184100/archive/workspace/IDENTITY.md",
+      "status": "archived",
+      "reason": "No direct Hermes destination; archived for manual review",
+      "details": {}
+    },
+    {
+      "kind": "archive",
+      "source": "/Users/allenpan/.openclaw/workspace/TOOLS.md",
+      "destination": "/Users/allenpan/.hermes/migration/openclaw/20260413T184100/archive/workspace/TOOLS.md",
+      "status": "archived",
+      "reason": "No direct Hermes destination; archived for manual review",
+      "details": {}
+    },
+    {
+      "kind": "archive",
+      "source": "/Users/allenpan/.openclaw/workspace/HEARTBEAT.md",
+      "destination": "/Users/allenpan/.hermes/migration/openclaw/20260413T184100/archive/workspace/HEARTBEAT.md",
+      "status": "archived",
+      "reason": "No direct Hermes destination; archived for manual review",
+      "details": {}
+    },
+    {
+      "kind": "archive",
+      "source": "/Users/allenpan/.openclaw/workspace/BOOTSTRAP.md",
+      "destination": "/Users/allenpan/.hermes/migration/openclaw/20260413T184100/archive/workspace/BOOTSTRAP.md",
+      "status": "archived",
+      "reason": "No direct Hermes destination; archived for manual review",
+      "details": {}
+    },
+    {
+      "kind": "archive",
+      "source": "/Users/allenpan/.openclaw/workspace/.learnings",
+      "destination": "/Users/allenpan/.hermes/migration/openclaw/20260413T184100/archive/workspace/.learnings",
+      "status": "archived",
+      "reason": "No direct Hermes destination; archived for manual review",
+      "details": {}
+    },
+    {
+      "kind": "archive",
+      "source": "/Users/allenpan/.openclaw/workspace/memory",
+      "destination": "/Users/allenpan/.hermes/migration/openclaw/20260413T184100/archive/workspace/memory",
+      "status": "archived",
+      "reason": "No direct Hermes destination; archived for manual review",
+      "details": {}
+    },
+    {
+      "kind": "raw-config-skip",
+      "source": "/Users/allenpan/.openclaw/openclaw.json",
+      "destination": null,
+      "status": "skipped",
+      "reason": "Selected Hermes-compatible values were extracted; raw OpenClaw config was not copied.",
+      "details": {}
+    },
+    {
+      "kind": "sensitive-skip",
+      "source": "/Users/allenpan/.openclaw/memory/main.sqlite",
+      "destination": null,
+      "status": "skipped",
+      "reason": "Contains secrets, binary state, or product-specific runtime data",
+      "details": {}
+    },
+    {
+      "kind": "sensitive-skip",
+      "source": "/Users/allenpan/.openclaw/credentials",
+      "destination": null,
+      "status": "skipped",
+      "reason": "Contains secrets, binary state, or product-specific runtime data",
+      "details": {}
+    },
+    {
+      "kind": "sensitive-skip",
+      "source": "/Users/allenpan/.openclaw/devices",
+      "destination": null,
+      "status": "skipped",
+      "reason": "Contains secrets, binary state, or product-specific runtime data",
+      "details": {}
+    },
+    {
+      "kind": "sensitive-skip",
+      "source": "/Users/allenpan/.openclaw/identity",
+      "destination": null,
+      "status": "skipped",
+      "reason": "Contains secrets, binary state, or product-specific runtime data",
+      "details": {}
+    },
+    {
+      "kind": "mcp-servers",
+      "source": null,
+      "destination": null,
+      "status": "skipped",
+      "reason": "No MCP servers found in OpenClaw config",
+      "details": {}
+    },
+    {
+      "kind": "plugins-config",
+      "source": "openclaw.json plugins.*",
+      "destination": "/Users/allenpan/.hermes/migration/openclaw/20260413T184100/archive/plugins-config.json",
+      "status": "archived",
+      "reason": "Plugins config archived for manual review",
+      "details": {}
+    },
+    {
+      "kind": "cron-jobs",
+      "source": "openclaw.json cron.*",
+      "destination": "/Users/allenpan/.hermes/migration/openclaw/20260413T184100/archive/cron-config.json",
+      "status": "archived",
+      "reason": "Cron config archived. Use 'hermes cron' to recreate jobs manually.",
+      "details": {}
+    },
+    {
+      "kind": "cron-jobs",
+      "source": "/Users/allenpan/.openclaw/cron",
+      "destination": "/Users/allenpan/.hermes/migration/openclaw/20260413T184100/archive/cron-store",
+      "status": "archived",
+      "reason": "Cron job store archived",
+      "details": {}
+    },
+    {
+      "kind": "hooks-config",
+      "source": "openclaw.json hooks.*",
+      "destination": "/Users/allenpan/.hermes/migration/openclaw/20260413T184100/archive/hooks-config.json",
+      "status": "archived",
+      "reason": "Hooks config archived for manual review",
+      "details": {}
+    },
+    {
+      "kind": "agent-config",
+      "source": "openclaw.json agents.defaults",
+      "destination": "config.yaml agent/compression/terminal",
+      "status": "migrated",
+      "reason": "Agent defaults mapped to Hermes config",
+      "details": {}
+    },
+    {
+      "kind": "agent-config",
+      "source": "openclaw.json agents.list",
+      "destination": "archive/agents-list.json",
+      "status": "archived",
+      "reason": "Multi-agent setup (7 agents) archived for manual recreation",
+      "details": {}
+    },
+    {
+      "kind": "agent-config",
+      "source": "openclaw.json bindings",
+      "destination": "archive/bindings.json",
+      "status": "archived",
+      "reason": "Agent routing bindings (1 rules) archived",
+      "details": {}
+    },
+    {
+      "kind": "gateway-config",
+      "source": "openclaw.json gateway.*",
+      "destination": "archive/gateway-config.json",
+      "status": "archived",
+      "reason": "Gateway config archived. Use 'hermes gateway' to configure.",
+      "details": {}
+    },
+    {
+      "kind": "env-var",
+      "source": "gateway.auth.token",
+      "destination": ".env HERMES_GATEWAY_TOKEN",
+      "status": "migrated",
+      "reason": "",
+      "details": {}
+    },
+    {
+      "kind": "session-config",
+      "source": "openclaw.json session (advanced)",
+      "destination": "archive/session-config.json",
+      "status": "archived",
+      "reason": "Advanced session settings archived (identity links, thread bindings, etc.)",
+      "details": {}
+    },
+    {
+      "kind": "full-providers",
+      "source": null,
+      "destination": null,
+      "status": "skipped",
+      "reason": "No model providers found",
+      "details": {}
+    },
+    {
+      "kind": "deep-channels",
+      "source": "openclaw.json channels (advanced settings)",
+      "destination": "archive/channels-deep-config.json",
+      "status": "archived",
+      "reason": "Deep channel config for 3 channels archived",
+      "details": {}
+    },
+    {
+      "kind": "browser-config",
+      "source": null,
+      "destination": null,
+      "status": "skipped",
+      "reason": "No browser configuration found",
+      "details": {}
+    },
+    {
+      "kind": "tools-config",
+      "source": "openclaw.json tools (full)",
+      "destination": "archive/tools-config.json",
+      "status": "archived",
+      "reason": "Full tools config archived for reference",
+      "details": {}
+    },
+    {
+      "kind": "approvals-config",
+      "source": null,
+      "destination": null,
+      "status": "skipped",
+      "reason": "No approvals configuration found",
+      "details": {}
+    },
+    {
+      "kind": "memory-backend",
+      "source": null,
+      "destination": null,
+      "status": "skipped",
+      "reason": "No memory backend configuration found",
+      "details": {}
+    },
+    {
+      "kind": "skills-config",
+      "source": "openclaw.json skills.*",
+      "destination": "archive/skills-registry-config.json",
+      "status": "archived",
+      "reason": "Skills registry config (12 entries) archived",
+      "details": {}
+    },
+    {
+      "kind": "ui-identity",
+      "source": null,
+      "destination": null,
+      "status": "skipped",
+      "reason": "No UI/identity configuration found",
+      "details": {}
+    },
+    {
+      "kind": "logging-config",
+      "source": null,
+      "destination": null,
+      "status": "skipped",
+      "reason": "No logging/diagnostics configuration found",
+      "details": {}
+    }
+  ]
+}

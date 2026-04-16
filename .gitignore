@@ -1,0 +1,37 @@
+# Sensitive files
+.env
+auth.json
+auth.lock
+
+# Runtime state
+state.db
+state.db-shm
+state.db-wal
+gateway.pid
+gateway_state.json
+interrupt_debug.log
+.update_check
+.hermes_history
+
+# Caches and logs
+cache/
+audio_cache/
+logs/
+models_dev_cache.json
+
+# Sessions and checkpoints
+sessions/
+checkpoints/
+
+# Snapshots
+.skills_prompt_snapshot.json
+
+# Embedded repos
+hermes-agent/
+
+# Lock files
+cron/.tick.lock
+memories/MEMORY.md.lock
+
+# Binaries
+bin/

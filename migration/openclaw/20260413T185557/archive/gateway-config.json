@@ -1,0 +1,13 @@
+{
+  "port": 18789,
+  "mode": "local",
+  "bind": "loopback",
+  "auth": {
+    "mode": "token",
+    "token": "6fa657e09e4ec815e03895663d76debbc7c091b9e82569b0"
+  },
+  "tailscale": {
+    "mode": "off",
+    "resetOnExit": false
+  }
+}

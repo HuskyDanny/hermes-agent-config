@@ -1,0 +1,42 @@
+{
+  "telegram": {
+    "capabilities": {
+      "inlineButtons": "all"
+    },
+    "dmPolicy": "pairing",
+    "groups": {
+      "-1003891805831": {
+        "requireMention": false,
+        "enabled": true,
+        "topics": {
+          "365": {
+            "agentId": "deep-researcher"
+          },
+          "506": {
+            "requireMention": false,
+            "agentId": "coder"
+          }
+        }
+      }
+    },
+    "groupAllowFrom": [
+      "8201206139"
+    ],
+    "groupPolicy": "allowlist",
+    "streaming": "partial",
+    "blockStreaming": true,
+    "threadBindings": {
+      "enabled": true,
+      "spawnAcpSessions": true
+    },
+    "reactionNotifications": "own"
+  },
+  "imessage": {
+    "dmPolicy": "pairing",
+    "groupPolicy": "allowlist"
+  },
+  "bluebubbles": {
+    "dmPolicy": "pairing",
+    "groupPolicy": "allowlist"
+  }
+}

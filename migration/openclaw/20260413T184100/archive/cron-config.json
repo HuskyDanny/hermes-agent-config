@@ -1,0 +1,10 @@
+{
+  "failureAlert": {
+    "enabled": true,
+    "after": 2
+  },
+  "failureDestination": {
+    "channel": "telegram",
+    "to": "-1003891805831:topic:358"
+  }
+}

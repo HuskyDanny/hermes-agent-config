@@ -1,0 +1,221 @@
+[
+  {
+    "id": "main",
+    "name": "Router",
+    "model": {
+      "primary": "anthropic/claude-opus-4-6",
+      "fallbacks": [
+        "anthropic/claude-sonnet-4-6"
+      ]
+    }
+  },
+  {
+    "id": "reviewer",
+    "name": "Reviewer",
+    "workspace": "/Users/allenpan/.openclaw/workspace-gemini-reviewer",
+    "agentDir": "/Users/allenpan/.openclaw/agents/gemini-reviewer/agent",
+    "model": {
+      "primary": "google/gemini-2.5-pro",
+      "fallbacks": [
+        "google/gemini-2.0-flash"
+      ]
+    },
+    "subagents": {
+      "allowAgents": [
+        "main",
+        "coder",
+        "sysmonitor",
+        "codemonitor"
+      ]
+    },
+    "tools": {
+      "allow": [
+        "read",
+        "exec",
+        "web_fetch",
+        "web_search",
+        "sessions_send",
+        "memory_search",
+        "memory_get"
+      ],
+      "deny": [
+        "write",
+        "edit",
+        "apply_patch",
+        "browser",
+        "nodes",
+        "cron",
+        "gateway",
+        "message"
+      ]
+    }
+  },
+  {
+    "id": "coder",
+    "name": "Coder",
+    "workspace": "/Users/allenpan/.openclaw/workspace-coder",
+    "agentDir": "/Users/allenpan/.openclaw/agents/coder/agent",
+    "model": {
+      "primary": "anthropic/claude-opus-4-6",
+      "fallbacks": [
+        "anthropic/claude-sonnet-4-6"
+      ]
+    },
+    "subagents": {
+      "allowAgents": [
+        "main",
+        "reviewer",
+        "sysmonitor",
+        "codemonitor"
+      ]
+    },
+    "tools": {
+      "allow": [
+        "exec",
+        "process",
+        "read",
+        "message",
+        "sessions_send",
+        "sessions_spawn",
+        "session_status",
+        "memory_search",
+        "memory_get"
+      ],
+      "deny": [
+        "write",
+        "edit",
+        "apply_patch",
+        "browser",
+        "nodes",
+        "cron",
+        "gateway"
+      ]
+    }
+  },
+  {
+    "id": "sysmonitor",
+    "name": "System Monitor",
+    "workspace": "/Users/allenpan/.openclaw/workspace-sysmonitor",
+    "agentDir": "/Users/allenpan/.openclaw/agents/sysmonitor/agent",
+    "model": {
+      "primary": "anthropic/claude-sonnet-4-6"
+    },
+    "heartbeat": {
+      "every": "1h"
+    },
+    "subagents": {
+      "allowAgents": [
+        "main",
+        "coder",
+        "reviewer",
+        "codemonitor"
+      ]
+    },
+    "tools": {
+      "allow": [
+        "exec",
+        "read",
+        "sessions_send",
+        "memory_search",
+        "memory_get"
+      ],
+      "deny": [
+        "write",
+        "edit",
+        "apply_patch",
+        "browser",
+        "nodes",
+        "cron",
+        "gateway",
+        "message"
+      ]
+    }
+  },
+  {
+    "id": "codemonitor",
+    "name": "Code Monitor",
+    "workspace": "/Users/allenpan/.openclaw/workspace-codemonitor",
+    "agentDir": "/Users/allenpan/.openclaw/agents/codemonitor/agent",
+    "model": {
+      "primary": "anthropic/claude-sonnet-4-6"
+    },
+    "tools": {
+      "allow": [
+        "exec",
+        "read",
+        "web_search",
+        "web_fetch",
+        "memory_search",
+        "memory_get"
+      ],
+      "deny": [
+        "write",
+        "edit",
+        "apply_patch",
+        "browser",
+        "nodes",
+        "message",
+        "sessions_send",
+        "sessions_spawn"
+      ]
+    }
+  },
+  {
+    "id": "paper-reader",
+    "name": "Paper Reader",
+    "workspace": "/Users/allenpan/.openclaw/workspace-paper-reader",
+    "agentDir": "/Users/allenpan/.openclaw/agents/paper-reader/agent",
+    "model": {
+      "primary": "anthropic/claude-sonnet-4-6"
+    },
+    "tools": {
+      "allow": [
+        "exec",
+        "read",
+        "write",
+        "web_fetch",
+        "message",
+        "sessions_spawn"
+      ],
+      "deny": [
+        "apply_patch",
+        "browser",
+        "nodes",
+        "cron",
+        "gateway"
+      ]
+    }
+  },
+  {
+    "id": "deep-researcher",
+    "name": "Deep Researcher",
+    "workspace": "/Users/allenpan/.openclaw/workspace-deep-researcher",
+    "agentDir": "/Users/allenpan/.openclaw/agents/deep-researcher/agent",
+    "model": {
+      "primary": "anthropic/claude-opus-4-6",
+      "fallbacks": [
+        "anthropic/claude-sonnet-4-6"
+      ]
+    },
+    "tools": {
+      "allow": [
+        "exec",
+        "read",
+        "write",
+        "web_search",
+        "web_fetch",
+        "sessions_send",
+        "memory_search",
+        "memory_get",
+        "sessions_spawn"
+      ],
+      "deny": [
+        "apply_patch",
+        "browser",
+        "nodes",
+        "cron",
+        "gateway"
+      ]
+    }
+  }
+]

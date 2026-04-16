@@ -1,0 +1,113 @@
+{
+  "version": 1,
+  "jobs": [
+    {
+      "id": "6d1be29b-9108-4e77-bd91-f2b62b14543a",
+      "name": "Daily iMessage Summary",
+      "enabled": true,
+      "deleteAfterRun": false,
+      "createdAtMs": 1770437008431,
+      "updatedAtMs": 1776074820712,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 18 * * *",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "next-heartbeat",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Read today's iMessages from /Users/allenpan/Library/Messages/chat.db. Generate a concise daily summary with EXACTLY this format:\n\n**📱 iMessage Daily — [Today's Date]**\n\n**🔴 Urgent & Important:**\n• [Messages that are BOTH time-sensitive AND high-stakes]\n\n**⏰ Urgent Only:**\n• [Time-sensitive but low importance - expiring codes, delivery updates]\n\n**⭐ Important Only:**\n• [High value but can wait - personal messages, useful info]\n\n**📋 All Messages:**\n| Time | From | Message |\n|------|------|---------|\n| HH:MM | sender | brief summary |\n\nRULES:\n- Skip spam, ads, pure marketing\n- Categorize using Eisenhower matrix (urgent vs important)\n- Table should include ALL non-spam messages\n- Keep message column to <50 chars\n- If a category is empty, say 'None'",
+        "model": "anthropic/claude-sonnet-4-6"
+      },
+      "state": {
+        "nextRunAtMs": 1776160800000,
+        "lastRunAtMs": 1776074400014,
+        "lastStatus": "ok",
+        "lastDurationMs": 420698,
+        "lastRunStatus": "ok",
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0,
+        "lastDelivered": true
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "telegram",
+        "to": "-1003891805831:topic:2"
+      }
+    },
+    {
+      "id": "coder-poll-tasks",
+      "name": "Coder: Poll for tasks",
+      "enabled": true,
+      "deleteAfterRun": false,
+      "schedule": {
+        "kind": "cron",
+        "expr": "*/30 * * * *",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "agentId": "coder",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Check for ready-for-impl issues on the financial-agent repo. Follow the implementation workflow in your AGENTS.md. If no issues found, reply HEARTBEAT_OK."
+      },
+      "state": {
+        "lastRunAtMs": 1776074820712,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 16973,
+        "lastDeliveryStatus": "not-delivered",
+        "consecutiveErrors": 0,
+        "nextRunAtMs": 1776076200000,
+        "lastDelivered": false,
+        "runningAtMs": 1776076200011
+      },
+      "wakeMode": "now",
+      "delivery": {
+        "mode": "announce",
+        "channel": "telegram",
+        "to": "-1003891805831:topic:358"
+      },
+      "updatedAtMs": 1776074837685
+    },
+    {
+      "id": "daily-paper-digest",
+      "name": "Daily Paper Digest",
+      "enabled": true,
+      "deleteAfterRun": false,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 8 * * *",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "agentId": "paper-reader",
+      "wakeMode": "now",
+      "maxConcurrentRuns": 1,
+      "sessionRetention": "24h",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Run daily paper digest: fetch trending ML/AI papers, score and rank them, summarize top papers, send digest to Telegram. Follow the workflow in AGENTS.md.",
+        "model": "anthropic/claude-sonnet-4-6"
+      },
+      "runTimeoutSeconds": 1200,
+      "state": {
+        "nextRunAtMs": 1776124800000,
+        "lastRunAtMs": 1776055248283,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 443133,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0,
+        "lastDelivered": true
+      },
+      "updatedAtMs": 1776055691416,
+      "delivery": {
+        "mode": "announce",
+        "channel": "telegram",
+        "to": "-1003891805831:topic:365"
+      }
+    }
+  ]
+}

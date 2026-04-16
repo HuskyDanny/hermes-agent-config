@@ -1,0 +1,6 @@
+{
+  "threadBindings": {
+    "enabled": true,
+    "idleHours": 24
+  }
+}

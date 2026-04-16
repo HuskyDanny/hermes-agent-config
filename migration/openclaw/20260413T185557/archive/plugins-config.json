@@ -1,0 +1,20 @@
+{
+  "entries": {
+    "imessage": {
+      "enabled": false
+    },
+    "bluebubbles": {
+      "enabled": false
+    },
+    "telegram": {
+      "enabled": true
+    },
+    "acpx": {
+      "enabled": true,
+      "config": {
+        "permissionMode": "approve-all",
+        "nonInteractivePermissions": "fail"
+      }
+    }
+  }
+}

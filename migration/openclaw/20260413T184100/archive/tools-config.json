@@ -1,0 +1,32 @@
+{
+  "allow": [
+    "session_status",
+    "gateway",
+    "group:messaging",
+    "read",
+    "exec",
+    "sessions_spawn",
+    "sessions_send",
+    "sessions_yield",
+    "subagents",
+    "process",
+    "memory_search",
+    "memory_get",
+    "message"
+  ],
+  "sessions": {
+    "visibility": "all"
+  },
+  "agentToAgent": {
+    "enabled": true,
+    "allow": [
+      "main",
+      "coder",
+      "reviewer",
+      "sysmonitor",
+      "codemonitor",
+      "paper-reader",
+      "deep-researcher"
+    ]
+  }
+}

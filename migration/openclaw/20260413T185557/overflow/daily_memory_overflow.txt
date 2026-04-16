@@ -1,0 +1,5 @@
+Router Decisions — 2026-03-31: [2026-03-31T10:14:09.022Z] [agent:main:cron:6d1be29b-9108-4e77-bd91-f2b62b14543a] SELF cron:imessage-daily-summary | reason: generated daily iMessage digest for Allen
+Router Decisions — 2026-04-07: [2026-04-07T10:07:32.363Z] [agent:main:cron:6d1be29b-9108-4e77-bd91-f2b62b14543a] SELF cron-imessage-summary | reason: daily iMessage digest generated and returned to cron delivery
+Router Decisions — 2026-04-08: [2026-04-08T10:02:03.762Z] [agent:main:cron:6d1be29b-9108-4e77-bd91-f2b62b14543a] SELF cron-imessage-daily-summary | reason: generated daily iMessage digest for delivery via cron channel
+Router Decisions — 2026-04-12: [2026-04-12T10:14:41.273Z] [agent:main:cron:6d1be29b-9108-4e77-bd91-f2b62b14543a] SELF cron:imessage-daily-summary | reason: daily iMessage digest generated for owner Allen
+Router Decisions — 2026-04-13: [2026-04-13T10:07:00.698Z] [agent:main:cron:6d1be29b-9108-4e77-bd91-f2b62b14543a] SELF cron:daily-imessage-summary | reason: read and summarized today's iMessages for Allen

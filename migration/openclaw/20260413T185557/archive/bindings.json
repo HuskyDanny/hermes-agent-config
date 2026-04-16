@@ -1,0 +1,8 @@
+[
+  {
+    "agentId": "main",
+    "match": {
+      "channel": "telegram"
+    }
+  }
+]

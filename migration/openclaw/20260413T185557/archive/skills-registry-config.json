@@ -1,0 +1,45 @@
+{
+  "install": {
+    "nodeManager": "bun"
+  },
+  "entries": {
+    "nano-banana-pro": {
+      "enabled": true,
+      "apiKey": "AIzaSyBAwayqiQDMbBgXVfwr3N0B69YQwbaZLX0"
+    },
+    "notion": {
+      "enabled": false,
+      "apiKey": "ntn_K77081135133q77wgsyGlVsyNBRMG0m4Xhxj9sTNdWRfkp"
+    },
+    "weather": {
+      "enabled": true
+    },
+    "openai-whisper": {
+      "enabled": true
+    },
+    "memory-lancedb": {
+      "enabled": false
+    },
+    "apple-notes": {
+      "enabled": false
+    },
+    "bluebubbles": {
+      "enabled": false
+    },
+    "node-connect": {
+      "enabled": false
+    },
+    "tmux": {
+      "enabled": false
+    },
+    "video-frames": {
+      "enabled": false
+    },
+    "gh-issues": {
+      "enabled": false
+    },
+    "coding-agent": {
+      "enabled": false
+    }
+  }
+}
