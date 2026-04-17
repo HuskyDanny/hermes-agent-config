@@ -1,0 +1,38 @@
+{
+  "jobs": [
+    {
+      "id": "6c5e65cc5f0c",
+      "name": "Claude Code rules weekly consolidation",
+      "prompt": "Consolidate Claude Code rules files to prevent proliferation, applying all lessons from the 2026-04-17 review.\n\n## What to do\n\n### Step 1 \u2014 Scan\n\nList all files in /Users/allenpan/.claude/rules/ (plain .md files, no subdirectories). Skip:\n- CONSOLIDATION-*.md files (meta/log artifacts \u2014 do NOT load into session context; if found, delete them)\n- template.md (rule authoring template, always standalone)\n\n### Step 2 \u2014 Group by frontmatter\n\nFor each remaining file, read the `Consolidates:` frontmatter field (if any). Group files by their consolidation target. Also flag files that have no `Consolidates:` field \u2014 those are standalone rules.\n\n### Step 3 \u2014 Verify before asserting\n\nDo NOT write \"X files deleted, Y consolidated\" in any output until after the script has:\n1. Confirmed every claimed source file actually exists\n2. Confirmed every claimed source file will actually be deleted\n3. Counted the actual numbers\n\n### Step 4 \u2014 Dedup pass (required)\n\nAfter grouping, check for cross-file duplication: any section header or key phrase (e.g. \"test-after-each-fix\", \"verify-binary-exists\") appearing in more than one consolidated file. For each duplicate:\n- Pick a primary home (the file where the concept is most on-topic)\n- In the non-primary file, replace the duplicate section with a one-line pointer:\n  \"For [concept], see [primary-file].md \u00a7[Section-Name].\"\nDo NOT leave two copies of the same rule drifting independently.\n\n### Step 5 \u2014 Conflict resolution\n\nIf two files in the same group conflict (not just overlap), resolve via frontmatter:\n- `Conflicts-With: filename.md` \u2192 that file loses\n- No Conflicts-With field \u2192 later alphabetical filename wins\nMake the resolution explicit in the frontmatter of the surviving file.\n\n### Step 6 \u2014 One concept, one home\n\nTool-specific narrow rules (e.g. harshjudge-cli-deps-check, per-plugin setup) should NOT be merged into generic categories. Keep them as standalone rules. Only merge files that share a genuine shared theme.\n\n### Step 7 \u2014 Preserve bash recipes\n\nIf a source file contains prescriptive bash commands (exact mkdir/mv/grep chains), preserve them verbatim in the consolidated file. Do NOT replace recipes with prose reminders. If a recipe is complex (multiple steps, error handling), consider moving it to a TSG playbook and keeping a one-line pointer in the rule.\n\n### Step 8 \u2014 Write consolidated files FIRST, then delete sources\n\nAlways write the new consolidated file, verify it exists and is valid, THEN delete the source files. Never delete sources before the new file is confirmed written.\n\n### Step 9 \u2014 No mid-thought self-correction\n\nDo not write lines like \"Actually re-reading...\" or \"Let me re-verify...\" in any output file. If you need to verify something while running, do it in scratch, not in the final artifact.\n\n### Step 10 \u2014 Diff old vs new\n\nAfter writing each consolidated file, diff the source files' bodies against the consolidated file's body to confirm nothing substantive was dropped. Report any gaps.\n\n## Output format\n\nReport to Allen via Telegram:\n- Files before / after count\n- Groups merged (source count \u2192 1 file)\n- Duplications resolved (which concept, which files, what pointer was added)\n- Conflicts resolved (which file won)\n- Files deleted\n- Any gaps found in diff\n- Any files left as standalone (with reason)\n\nIf no consolidation is needed (all remaining files are already unique/standalone), report that and do nothing.\n\n## Key lessons encoded\n\n1. Meta artifacts (CONSOLIDATION-*.md) \u2192 delete if found, do not create\n2. Verify counts before asserting\n3. No mid-thought self-correction in artifacts\n4. Preserve prescriptive bash, don't weaken to prose\n5. One concept, one primary home + pointer elsewhere\n6. Verify skill coverage before declaring redundancy absorbed\n7. Don't merge tool-specific narrow rules into generic categories\n8. Dedup pass after merging\n9. Explicit conflict resolution in frontmatter\n10. Diff old vs new after each consolidated file",
+      "skills": [],
+      "skill": null,
+      "model": null,
+      "provider": null,
+      "base_url": null,
+      "script": null,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 3 * * 0",
+        "display": "0 3 * * 0"
+      },
+      "schedule_display": "0 3 * * 0",
+      "repeat": {
+        "times": 999,
+        "completed": 0
+      },
+      "enabled": true,
+      "state": "scheduled",
+      "paused_at": null,
+      "paused_reason": null,
+      "created_at": "2026-04-17T22:20:38.814273+08:00",
+      "next_run_at": "2026-04-19T03:00:00+08:00",
+      "last_run_at": null,
+      "last_status": null,
+      "last_error": null,
+      "last_delivery_error": null,
+      "deliver": "telegram:8201206139",
+      "origin": null
+    }
+  ],
+  "updated_at": "2026-04-17T22:42:41.505344+08:00"
+}
