@@ -37,7 +37,7 @@ hermes-agent/
 
 # Lock files
 cron/.tick.lock
-memories/MEMORY.md.lock
+memories/*.lock
 
 # Binaries
 bin/

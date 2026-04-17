@@ -18,7 +18,7 @@ Context > How Allen Thinks: **Examples matter** — key points should be backed 
 §
 Context > How Allen Thinks: **No fancy words** — avoid jargon or abbreviations without explaining them first
 §
-Context > How Allen Thinks: **Root cause over workarounds** — when debugging, find the actual cause, not a bandaid fix
+Allen prefers **topic-based** over chronological/phase-based structures in task planning.
 §
 Context > Communication Style: Prefers depth over brevity
 §
@@ -28,4 +28,6 @@ Context > Communication Style: Dislikes vague or hand-wavy explanations
 §
 Context > Communication Style: ---
 §
-Context > Communication Style: The more you know, the better you can help. But remember — you're learning about a person, not building a dossier. Respect the difference.
+Context > Allen questions tool mechanics — wants routing/logic explained, not just documented behavior.
+§
+Allen questions how/when tools get invoked — he asked "but when would X skill get invoked?" rather than accepting skill documentation at face value. He wants to understand routing mechanics, not just documented behavior.
