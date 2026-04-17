@@ -26,6 +26,12 @@ checkpoints/
 # Snapshots
 .skills_prompt_snapshot.json
 
+# Runtime channel directory (updates every session)
+channel_directory.json
+
+# Personal pastes
+pastes/
+
 # Embedded repos
 hermes-agent/
 
