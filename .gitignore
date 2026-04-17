@@ -16,8 +16,19 @@ interrupt_debug.log
 # Caches and logs
 cache/
 audio_cache/
+image_cache/
 logs/
 models_dev_cache.json
+
+# macOS metadata
+.DS_Store
+
+# .env backups (may contain secrets)
+.env.bak.*
+.env.*.bak
+
+# Cron runtime output (keep cron/jobs.json tracked)
+cron/output/
 
 # Sessions and checkpoints
 sessions/

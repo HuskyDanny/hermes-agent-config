@@ -267,7 +267,6 @@ whatsapp: {}
 telegram:
   channel_prompts: {}
   require_mention: false
-  free_response_chats: '-1003891805831'
   reactions: true
 slack:
   channel_prompts: {}
