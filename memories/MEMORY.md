@@ -28,3 +28,5 @@ Todoist CLI: "monday 9am" → parsed as next monday 9am correctly, due date stor
 Allen: 驾照扣分 (driver's license point deduction) - needs someone else to deduct 6 points (代扣). Task created in Todoist for 2026-04-20 Monday 9am.
 
 Allen sometimes says "sessionid" when meaning "Todoid task ID" - informal shorthand. He meant Todoist, not cronjob.
+§
+Hermes config bug (auxiliary_client.py line 2174): `provider: openai` with `base_url`/`api_key` in config.yaml is broken — credentials are silently discarded. Workaround: use native provider `kimi-coding-cn` + set `KIMI_CN_API_KEY` env var. Alternative: use `provider: custom` with `base_url` explicitly set (this path does pass api_key through).

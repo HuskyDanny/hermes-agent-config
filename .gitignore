@@ -12,6 +12,7 @@ gateway_state.json
 interrupt_debug.log
 .update_check
 .hermes_history
+processes.json
 
 # Caches and logs
 cache/
