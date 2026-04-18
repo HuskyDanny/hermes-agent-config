@@ -116,10 +116,11 @@ smart_model_routing:
   cheap_model: {}
 auxiliary:
   vision:
-    provider: auto
-    model: ''
-    base_url: ''
+    provider: openai
+    model: moonshot-v1-8k-vision-preview
+    base_url: https://api.moonshot.cn/v1
     api_key: ''
+    api_key_env: MOONSHOT_API_KEY
     timeout: 120
     download_timeout: 30
   web_extract:
